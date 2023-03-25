@@ -7,7 +7,7 @@ name: Deploy HTML Files to AppService - CMST385
 on:
   push:
   branches:
-      - main
+    - main
 
 jobs:
   build-and-deploy:
@@ -15,8 +15,8 @@ jobs:
     steps:
        - uses: actions/checkout@main
        - name: Deploy to Azure Web App
-         uses: azure/webapps-deploy@v1
-         with:
-           app-name: 'cmst385-lprice53'
-           slot-name: 'production'
-           publish-profile: ${{secrets.AppServiceCMST385}}
+       uses: azure/webapps-deploy@v1
+       with:
+         app-name: 'cmst385-lprice53'
+         slot-name: 'production'
+         publish-profile: ${{secrets.AppServiceCMST385}}
